@@ -1,7 +1,6 @@
 extends CharacterBody2D
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
+const SPEED = 150.0
+const JUMP_VELOCITY = -320.0
 @export var kick_force := 400.0
 @export var kick_range_offset := 5.0
 #KickArea sprite
@@ -31,7 +30,7 @@ func kick():
 func kick_up():
 	for body in kick_area.get_overlapping_bodies():
 		if body is RigidBody2D:
-			var direction = Vector2(facing_direction*0.1, -2).normalized()
+			var direction = Vector2(facing_direction*0.15, -2).normalized()
 			body.apply_central_impulse(direction * kick_force)
 
 func _physics_process(delta: float) -> void:
@@ -89,6 +88,7 @@ func kick_animation():
 	is_kicking = true
 	anim_sprite.play("Kick")
 	await anim_sprite.animation_finished
+	print("hi mom")
 	anim_sprite.play("Idle")
 	
 func update_animation(direction: float) -> void:
