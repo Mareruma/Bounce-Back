@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -400.0
 @export var kick_range_offset := 5.0
 #KickArea sprite
 @onready var kick_area = $KickArea
+@onready var anim_sprite: AnimatedSprite2D = $Sprite2D
 
 #Vajag lai butu atsperigs
 #var velocity_before_collision:Vector2;
@@ -13,10 +14,14 @@ const JUMP_VELOCITY = -400.0
 #Vajag lai butu atsperigs (slikts)
 #var jump_count=1.0;
 #var is_jumping=false;
-var facing_direction:=1;
+var facing_direction := 1 ;
 #rigid body ietekmas kaut kas
 @export var push_force := 5.0
 
+var is_kicking:bool = false
+
+func _ready() -> void:
+	anim_sprite.animation_finished.connect(_on_animation_finished)
 
 func kick():
 	for body in kick_area.get_overlapping_bodies():
@@ -43,6 +48,8 @@ func _physics_process(delta: float) -> void:
 	kick_area.position.x = facing_direction * kick_range_offset
 	if Input.is_action_just_pressed("kick"):
 		kick()
+		if not is_kicking:
+			kick_animation()
 	
 	#Iedarbiba uz rigidbody
 	for i in get_slide_collision_count():
@@ -69,4 +76,27 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	update_animation(direction)
 	move_and_slide()
+
+func kick_animation():
+	is_kicking = true
+	anim_sprite.play("Kick")
+	
+func update_animation(direction: float) -> void:
+	if direction > 0:
+		anim_sprite.flip_h = false
+	elif direction < 0:
+		anim_sprite.flip_h = true
+	
+	if is_kicking:
+		return
+	
+	if direction != 0:
+		anim_sprite.play("Run")
+	else:
+		anim_sprite.play("Idle")
+
+func _on_animation_finished():
+	if anim_sprite.animation == "kick":
+		is_kicking = false
