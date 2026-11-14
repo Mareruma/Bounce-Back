@@ -30,6 +30,9 @@ sources/1 = SubResource("TileSetAtlasSource_4dpyx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wp5od"]
+distance = -384.0
+
 [node name="Level_1" type="Node2D" unique_id=547523218]
 script = ExtResource("1_cyadu")
 
@@ -43,14 +46,20 @@ position = Vector2(98, 251)
 [node name="Duck" parent="." unique_id=779076703 instance=ExtResource("3_iixi8")]
 position = Vector2(149, 250)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1345982307]
+[node name="Finish" type="Area2D" parent="." unique_id=1345982307]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=938978715]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish" unique_id=938978715]
 position = Vector2(1128, 285)
 shape = SubResource("RectangleShape2D_wp5od")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1764339959]
+[node name="Sprite2D" type="Sprite2D" parent="Finish" unique_id=1764339959]
 position = Vector2(1127.8314, 284.88382)
 texture = ExtResource("5_xgxfi")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Void" type="Area2D" parent="." unique_id=299740446]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Void" unique_id=162759750]
+shape = SubResource("WorldBoundaryShape2D_wp5od")
+
+[connection signal="body_entered" from="Finish" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Void" to="." method="_on_void_body_entered"]
