@@ -1,37 +1,57 @@
-[gd_scene format=3 uid="uid://bj5wrg1ycfc2f"]
+[gd_scene format=4 uid="uid://bj5wrg1ycfc2f"]
 
 [ext_resource type="PackedScene" uid="uid://cbci8hx40y08l" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://wafufsn5kn1j" path="res://Assets/icon.svg" id="2_qxrlw"]
 [ext_resource type="Script" uid="uid://v5rle8mls5c5" path="res://Scenes/rigid_body_2d.gd" id="2_wrm1d"]
+[ext_resource type="Texture2D" uid="uid://di2p8v3h0uxi7" path="res://Assets/tileset.png" id="4_3dryh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ebmjs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
-size = Vector2(596, 40)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_sixep"]
-radius = 25.019993
+radius = 8.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wowpa"]
+texture = ExtResource("4_3dryh")
+2:0/size_in_atlas = Vector2i(2, 2)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.0791531, -1.0791512, 15.827568, -15.46785, 15.827568, 16.367144, -15.827568, 16.00743)
+4:0/size_in_atlas = Vector2i(2, 2)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.827568, -15.827568, 15.827568, -15.46785, 15.827568, 16.367144, -15.827568, 16.00743)
+8:0/size_in_atlas = Vector2i(2, 2)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.007427, -0.17985725, 15.827566, 0.35971832, 15.827568, 16.367144, -15.827568, 16.00743)
+10:0/size_in_atlas = Vector2i(2, 2)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.827566, 0.35971832, 15.827568, 16.367144, -15.827568, 16.00743)
+12:0/size_in_atlas = Vector2i(2, 2)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.827566, 0.35971832, 15.827568, 16.367144, -15.827568, 16.00743)
+
+[sub_resource type="TileSet" id="TileSet_vkdpk"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_wowpa")
 
 [node name="Game" type="Node2D" unique_id=1011857578]
 
 [node name="Player" parent="." unique_id=872753299 instance=ExtResource("1_ebmjs")]
-position = Vector2(332, 29)
+position = Vector2(42, 172)
 
 [node name="Platform" type="StaticBody2D" parent="." unique_id=1744029070]
 physics_material_override = SubResource("PhysicsMaterial_ebmjs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=1872313104]
-position = Vector2(298, 337)
-shape = SubResource("RectangleShape2D_wp5od")
-
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1259238222]
-position = Vector2(469, 42)
+position = Vector2(168, 185)
 script = ExtResource("2_wrm1d")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=492564117]
-position = Vector2(1.1920929e-07, 1.1920929e-07)
-scale = Vector2(0.3964844, 0.3964844)
+position = Vector2(6.3180923e-06, -5.9604645e-07)
+scale = Vector2(0.14599624, 0.14599624)
 texture = ExtResource("2_qxrlw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1545037775]
 shape = SubResource("CircleShape2D_sixep")
+
+[node name="TileMap" type="TileMapLayer" parent="." unique_id=1635631209]
+tile_map_data = PackedByteArray("AAABAA0AAQACAAAAABADAA8AAQACAAAAABABAA8AAQAEAAAAAAAFABEAAQAEAAAAAAADABEAAQAEAAAAAAAGABEAAQAEAAAAAAAHABEAAQAEAAAAAAAIABEAAQAEAAAAAAAJABEAAQAEAAAAAAAKABEAAQAEAAAAAAALABEAAQAEAAAAAAAMABEAAQAEAAAAAAANABEAAQAEAAAAAAAOABEAAQAEAAAAAAAPABEAAQAEAAAAAAAQABEAAQAEAAAAAAARABEAAQAEAAAAAAASABEAAQAEAAAAAAATABEAAQAEAAAAAAAUABEAAQAEAAAAAAAVABEAAQAEAAAAAAAWABEAAQAEAAAAAAAXABEAAQAEAAAAAAABABEAAQAEAAAAAAAbABEAAQAEAAAAAAAdABEAAQAEAAAAAAAXAA8AAQAKAAAAAAAbAA8AAQAKAAAAABAfABEAAQAMAAAAABAhABMAAQAMAAAAABAfABMAAQAEAAAAAAAjABUAAQAEAAAAAAAhABUAAQAEAAAAAAAmABUAAQAEAAAAAAA=")
+tile_set = SubResource("TileSet_vkdpk")
