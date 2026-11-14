@@ -28,6 +28,11 @@ func kick():
 		if body is RigidBody2D:
 			var direction = Vector2(facing_direction, -0.3).normalized()
 			body.apply_central_impulse(direction * kick_force)
+func kick_up():
+	for body in kick_area.get_overlapping_bodies():
+		if body is RigidBody2D:
+			var direction = Vector2(sign(facing_direction), -3.5).normalized()
+			body.apply_central_impulse(direction * kick_force)
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
@@ -50,7 +55,8 @@ func _physics_process(delta: float) -> void:
 		kick()
 		if not is_kicking:
 			kick_animation()
-	
+	if Input.is_action_just_pressed("kick_up"):
+		kick_up()
 	#Iedarbiba uz rigidbody
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)

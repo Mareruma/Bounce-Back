@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://o1pcyeg0utpo" path="res://Assets/pixil-frame-0 (3).png" id="4_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://cym1150q66dd7" path="res://Assets/pixil-frame-0 (5).png" id="5_tx1dd"]
 [ext_resource type="Texture2D" uid="uid://0n6ksgrpgwdp" path="res://Assets/pixil-frame-0 (6).png" id="6_gymyn"]
-[ext_resource type="Texture2D" uid="uid://dll51p7e55t66" path="res://Assets/pixil-frame-0.png" id="7_pu2lt"]
+[ext_resource type="Texture2D" uid="uid://3jg82y66kt35" path="res://Assets/pixil-frame-0.png" id="7_pu2lt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wp5od"]
 animations = [{
