@@ -2,14 +2,30 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-var velocity_before_collision:Vector2;
-var jump_count=1.0;
-var is_jumping=false;
+@export var kick_force := 500.0
+@export var kick_range_offset := 18.0
+#KickArea sprite
+@onready var kick_area = $KickArea
 
+#Vajag lai butu atsperigs
+#var velocity_before_collision:Vector2;
+
+#Vajag lai butu atsperigs (slikts)
+#var jump_count=1.0;
+#var is_jumping=false;
+var facing_direction:=1;
 #rigid body ietekmas kaut kas
-@export var push_force := 20.0
+@export var push_force := 5.0
+
+
+func kick():
+	for body in kick_area.get_overlapping_bodies():
+		if body is RigidBody2D:
+			var direction = Vector2(facing_direction, -0.3).normalized()
+			body.apply_central_impulse(direction * kick_force)
 
 func _physics_process(delta: float) -> void:
+	var direction := Input.get_axis("ui_left", "ui_right")
 	#Gravitacija lkm
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -23,7 +39,12 @@ func _physics_process(delta: float) -> void:
 		
 		#print(velocity.y)
 		#jump_count+=1; 
-		
+	#Spersana
+	kick_area.position.x = facing_direction * kick_range_offset
+	if Input.is_action_just_pressed("kick"):
+		kick()
+	
+	#Iedarbiba uz rigidbody
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var body = collision.get_collider()
@@ -31,14 +52,18 @@ func _physics_process(delta: float) -> void:
 		if body is RigidBody2D:
 			var push_direction = -collision.get_normal()
 			body.apply_central_impulse(push_direction * push_force)
+		
+	
 	#Leksana
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		#is_jumping=true;
 		#jump_count=1;
 		velocity.y = JUMP_VELOCITY
-		
+	#pagriesanas
+	if(direction!=0):
+		facing_direction=sign(direction)
+	
 	#x ass kustiba
-	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:

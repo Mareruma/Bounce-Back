@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
 size = Vector2(27.5, 5.125)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(11, 6)
+
 [node name="Player" type="CharacterBody2D" unique_id=872753299]
 script = ExtResource("1_cvnsp")
 
@@ -20,3 +23,8 @@ shape = SubResource("RectangleShape2D_wp5od")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1259623436]
 zoom = Vector2(3, 3)
+
+[node name="KickArea" type="Area2D" parent="." unique_id=421994624]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KickArea" unique_id=1879987777]
+shape = SubResource("RectangleShape2D_cvnsp")
