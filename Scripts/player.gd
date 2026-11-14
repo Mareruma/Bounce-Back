@@ -2,7 +2,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-@export var kick_force := 500.0
+@export var kick_force := 400.0
 @export var kick_range_offset := 5.0
 #KickArea sprite
 @onready var kick_area = $KickArea
