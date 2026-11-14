@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cbci8hx40y08l" path="res://Scenes/player.tscn" id="2_3mqfk"]
 [ext_resource type="PackedScene" uid="uid://btrbb6lehnqyt" path="res://Scenes/duck.tscn" id="3_iixi8"]
 [ext_resource type="Texture2D" uid="uid://y3kg388pmj4w" path="res://Assets/carrot.png" id="5_xgxfi"]
-[ext_resource type="Script" uid="uid://bydaj0u4gk1uh" path="res://Scenes/Levels/platform_vertical.gd" id="6_xgxfi"]
-[ext_resource type="Script" uid="uid://b0y5bi7uy1rwk" path="res://Scenes/Levels/animatable_body_2d.gd" id="7_5f3p6"]
+[ext_resource type="Script" uid="uid://bydaj0u4gk1uh" path="res://Scripts/Levels/platform_vertical.gd" id="6_xgxfi"]
+[ext_resource type="Script" uid="uid://b0y5bi7uy1rwk" path="res://Scripts/Levels/animatable_body_2d.gd" id="7_5f3p6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dpyx"]
 texture = ExtResource("1_tlcug")
@@ -52,7 +52,7 @@ tile_set = SubResource("TileSet_3mqfk")
 position = Vector2(98, 251)
 
 [node name="Duck" parent="." unique_id=779076703 instance=ExtResource("3_iixi8")]
-position = Vector2(149, 250)
+position = Vector2(163, 225)
 
 [node name="Finish" type="Area2D" parent="." unique_id=1345982307]
 
@@ -102,7 +102,7 @@ position = Vector2(0, -1)
 script = ExtResource("7_5f3p6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D2" unique_id=26733318]
-position = Vector2(408, 280.125)
+position = Vector2(904.35486, 345.8494)
 shape = SubResource("RectangleShape2D_sixep")
 
 [node name="ColorRect" type="ColorRect" parent="AnimatableBody2D2" unique_id=289786441]
