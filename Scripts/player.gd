@@ -15,7 +15,7 @@ const JUMP_VELOCITY = -400.0
 #var is_jumping=false;
 var facing_direction:=1;
 #rigid body ietekmas kaut kas
-@export var push_force := 20.0
+@export var push_force := 5.0
 
 
 func kick():
