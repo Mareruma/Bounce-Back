@@ -3,24 +3,26 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-var lecienu_sk=1.0;
-var lec=false;
+var velocity_before_collision:Vector2;
+var jump_count=1.0;
+var is_jumping=false;
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		velocity_before_collision=velocity;
 	
 	 
-	if is_on_floor() and lec:
-		if(lecienu_sk<5):
-			velocity.y = JUMP_VELOCITY*(1.0/pow(1.5,lecienu_sk));
+	if is_on_floor() and velocity_before_collision.y>50:
+		velocity.y = -velocity_before_collision.y/pow(1.5,jump_count);
+		print(velocity_before_collision)
 		
 		#print(velocity.y)
-		lecienu_sk+=1; 
+		#jump_count+=1; 
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		lec=true;
-		lecienu_sk=1;
+		#is_jumping=true;
+		#jump_count=1;
 		velocity.y = JUMP_VELOCITY
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
