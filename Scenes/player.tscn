@@ -46,22 +46,23 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3smsa"]
 radius = 4.0
-height = 15.0
+height = 14.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
-size = Vector2(12, 11.25)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx1dd"]
+size = Vector2(14, 12)
 
 [node name="Player" type="CharacterBody2D" unique_id=872753299]
+position = Vector2(2, 3)
 script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=638624359]
-position = Vector2(-1.5624993, -2.609375)
+position = Vector2(-2, -3)
 scale = Vector2(0.26367188, 0.26220703)
 sprite_frames = SubResource("SpriteFrames_wp5od")
 animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2124131111]
-position = Vector2(-2, -4)
+position = Vector2(-2, -3)
 shape = SubResource("CapsuleShape2D_3smsa")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1259623436]
@@ -71,5 +72,5 @@ zoom = Vector2(3, 3)
 [node name="KickArea" type="Area2D" parent="." unique_id=421994624]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KickArea" unique_id=1879987777]
-position = Vector2(-2, -1.375)
-shape = SubResource("RectangleShape2D_cvnsp")
+position = Vector2(-2, -2)
+shape = SubResource("RectangleShape2D_tx1dd")
