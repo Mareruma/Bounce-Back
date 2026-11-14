@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://bj5wrg1ycfc2f"]
 
 [ext_resource type="PackedScene" uid="uid://cbci8hx40y08l" path="res://Scenes/player.tscn" id="1_ebmjs"]
+[ext_resource type="Texture2D" uid="uid://wafufsn5kn1j" path="res://Assets/icon.svg" id="2_qxrlw"]
+[ext_resource type="Script" uid="uid://v5rle8mls5c5" path="res://Scenes/rigid_body_2d.gd" id="2_wrm1d"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ebmjs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
 size = Vector2(596, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sixep"]
+radius = 25.019993
 
 [node name="Game" type="Node2D" unique_id=1011857578]
 
@@ -11,7 +18,20 @@ size = Vector2(596, 40)
 position = Vector2(332, 29)
 
 [node name="Platform" type="StaticBody2D" parent="." unique_id=1744029070]
+physics_material_override = SubResource("PhysicsMaterial_ebmjs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=1872313104]
 position = Vector2(298, 337)
 shape = SubResource("RectangleShape2D_wp5od")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1259238222]
+position = Vector2(469, 42)
+script = ExtResource("2_wrm1d")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=492564117]
+position = Vector2(1.1920929e-07, 1.1920929e-07)
+scale = Vector2(0.3964844, 0.3964844)
+texture = ExtResource("2_qxrlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1545037775]
+shape = SubResource("CircleShape2D_sixep")
