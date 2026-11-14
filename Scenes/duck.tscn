@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://btrbb6lehnqyt"]
+
+[ext_resource type="Texture2D" uid="uid://dmo2tfc678h1o" path="res://Assets/Duck.png" id="1_jhtpm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tvw4f"]
+radius = 8.0
+
+[node name="Duck" type="RigidBody2D" unique_id=779076703]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=203658649]
+position = Vector2(-2.074957, -1.7758203)
+scale = Vector2(0.20149893, 0.2444835)
+texture = ExtResource("1_jhtpm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1539065082]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_tvw4f")

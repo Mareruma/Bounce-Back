@@ -1,0 +1,39 @@
+[gd_scene format=4 uid="uid://c08rxafe7shfh"]
+
+[ext_resource type="Texture2D" uid="uid://di2p8v3h0uxi7" path="res://Assets/tileset.png" id="1_tlcug"]
+[ext_resource type="PackedScene" uid="uid://cbci8hx40y08l" path="res://Scenes/player.tscn" id="2_3mqfk"]
+[ext_resource type="PackedScene" uid="uid://btrbb6lehnqyt" path="res://Scenes/duck.tscn" id="3_iixi8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dpyx"]
+texture = ExtResource("1_tlcug")
+2:0/size_in_atlas = Vector2i(2, 2)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.0791531, -1.0791512, 15.827568, -15.46785, 15.827568, 16.367144, -15.827568, 16.00743)
+4:0/size_in_atlas = Vector2i(2, 2)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.827568, -15.827568, 15.827568, -15.46785, 15.827568, 16.367144, -15.827568, 16.00743)
+8:0/size_in_atlas = Vector2i(2, 2)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.007427, -0.17985725, 15.827566, 0.35971832, 15.827568, 16.367144, -15.827568, 16.00743)
+10:0/size_in_atlas = Vector2i(2, 2)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.827566, 0.35971832, 15.827568, 16.367144, -15.827568, 16.00743)
+12:0/size_in_atlas = Vector2i(2, 2)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.63726044, -16.250168, 15.612907, -16.250168, 15.827568, 16.367144, -15.827568, 16.00743)
+
+[sub_resource type="TileSet" id="TileSet_3mqfk"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_4dpyx")
+
+[node name="Level_1" type="Node2D" unique_id=547523218]
+
+[node name="TileMap" type="TileMapLayer" parent="." unique_id=1911295996]
+tile_map_data = PackedByteArray("AAABAA0AAQACAAAAABADAA8AAQACAAAAABABAA8AAQAEAAAAAAAFABEAAQAEAAAAAAADABEAAQAEAAAAAAAGABEAAQAEAAAAAAAHABEAAQAEAAAAAAAIABEAAQAEAAAAAAAJABEAAQAEAAAAAAAKABEAAQAEAAAAAAALABEAAQAEAAAAAAAMABEAAQAEAAAAAAANABEAAQAEAAAAAAAOABEAAQAEAAAAAAAPABEAAQAEAAAAAAAQABEAAQAEAAAAAAARABEAAQAEAAAAAAASABEAAQAEAAAAAAATABEAAQAEAAAAAAAUABEAAQAEAAAAAAAVABEAAQAEAAAAAAAWABEAAQAEAAAAAAAXABEAAQAEAAAAAAABABEAAQAEAAAAAAAbABEAAQAEAAAAAAAdABEAAQAEAAAAAAAXAA8AAQAKAAAAAAAbAA8AAQAKAAAAABAfABEAAQAMAAAAABAhABMAAQAMAAAAABAfABMAAQAEAAAAAAAjABUAAQAEAAAAAAAhABUAAQAEAAAAAAAmABUAAQAEAAAAAAA=")
+tile_set = SubResource("TileSet_3mqfk")
+
+[node name="Player" parent="." unique_id=872753299 instance=ExtResource("2_3mqfk")]
+position = Vector2(98, 251)
+
+[node name="Duck" parent="." unique_id=779076703 instance=ExtResource("3_iixi8")]
+position = Vector2(149, 250)
