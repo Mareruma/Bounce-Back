@@ -2,6 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://dmo2tfc678h1o" path="res://Assets/Duck.png" id="1_jhtpm"]
 [ext_resource type="Script" uid="uid://dss65dtk6ne2x" path="res://Scripts/duck.gd" id="1_tvw4f"]
+[ext_resource type="Texture2D" uid="uid://c4tmc2618vgyh" path="res://Assets/apelsins.png" id="3_xpqa0"]
+[ext_resource type="Texture2D" uid="uid://pv47i63bmpw2" path="res://Assets/boling bumba.png" id="4_mshtc"]
+[ext_resource type="Texture2D" uid="uid://6dukly8xoo3p" path="res://Assets/minion.png" id="5_bvjhm"]
+[ext_resource type="Texture2D" uid="uid://vuscs67u8jo6" path="res://Assets/monstrs.png" id="6_3a0xp"]
+[ext_resource type="Texture2D" uid="uid://cvv0jn6d83ncx" path="res://Assets/navīga zvaigzne.png" id="7_h76i3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tvw4f"]
 radius = 8.0
@@ -9,10 +14,41 @@ radius = 8.0
 [node name="Duck" type="RigidBody2D" unique_id=779076703]
 script = ExtResource("1_tvw4f")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=203658649]
-position = Vector2(-2.074957, -1.7758203)
+[node name="Duck" type="Sprite2D" parent="." unique_id=203658649]
+visible = false
+position = Vector2(-1, -2)
+scale = Vector2(0.24352148, 0.24352148)
 texture = ExtResource("1_jhtpm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1539065082]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_tvw4f")
+
+[node name="Orange" type="Sprite2D" parent="." unique_id=28763605]
+visible = false
+position = Vector2(-0.99999976, 1.1920929e-07)
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("3_xpqa0")
+
+[node name="BowlingBall" type="Sprite2D" parent="." unique_id=1165791322]
+visible = false
+position = Vector2(-1.0000002, -2.3841858e-07)
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("4_mshtc")
+
+[node name="Minion" type="Sprite2D" parent="." unique_id=633235979]
+visible = false
+position = Vector2(-1, 0)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("5_bvjhm")
+
+[node name="Monster" type="Sprite2D" parent="." unique_id=1100732156]
+visible = false
+position = Vector2(-1, 0)
+scale = Vector2(0.16499999, 0.16499999)
+texture = ExtResource("6_3a0xp")
+
+[node name="Star" type="Sprite2D" parent="." unique_id=752242065]
+position = Vector2(-1, 0)
+scale = Vector2(0.16500002, 0.16500002)
+texture = ExtResource("7_h76i3")

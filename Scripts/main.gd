@@ -3,7 +3,7 @@ extends Node
 var time: float = 0.0
 var is_timer_running: bool = false
 var level_times: Array[float] = []
-
+var izveletais_skins = 1
 var izveleta_tekstura: Texture2D = preload("res://Assets/pixil-frame-0 (1).png")
 
 func _process(delta: float) -> void:

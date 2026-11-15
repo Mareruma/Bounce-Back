@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://rq11q35bu1mw" path="res://Assets/PlayerSkins/samurai_IDLE.png" id="8_8erm5"]
 [ext_resource type="Texture2D" uid="uid://can3ig5c008o1" path="res://Assets/PlayerSkins/ATTACK samurai_1.png" id="9_tx1dd"]
 [ext_resource type="Texture2D" uid="uid://d38cximtffqbt" path="res://Assets/PlayerSkins/samurai_RUN.png" id="10_gymyn"]
+[ext_resource type="AudioStream" uid="uid://bo5ujtkn507sv" path="res://Assets/sounds/walking.mp3" id="11_gymyn"]
+[ext_resource type="AudioStream" uid="uid://d31kwq1ajrnwv" path="res://Assets/sounds/jump.mp3" id="12_pu2lt"]
+[ext_resource type="AudioStream" uid="uid://5y0fvxn5jsx2" path="res://Assets/sounds/hit.mp3" id="13_ukyrk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wp5od"]
 animations = [{
@@ -327,3 +330,12 @@ position = Vector2(-1.9374995, -9.0625)
 scale = Vector2(0.3945313, 0.3945313)
 sprite_frames = SubResource("SpriteFrames_sixep")
 animation = &"Idle"
+
+[node name="RunSound" type="AudioStreamPlayer2D" parent="." unique_id=1672585566]
+stream = ExtResource("11_gymyn")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=102904683]
+stream = ExtResource("12_pu2lt")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=1005410294]
+stream = ExtResource("13_ukyrk")

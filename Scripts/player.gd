@@ -8,6 +8,12 @@ const JUMP_VELOCITY = -320.0
 @onready var skins = [$Sprite2D, $SpriteSamurai2D]
 @onready var anim_sprite: AnimatedSprite2D = $Sprite2D
 
+
+
+#Skanas
+@onready var run_sound = $RunSound
+@onready var jump_sound = $JumpSound
+@onready var hit_sound = $HitSound
 #Vajag lai butu atsperigs
 #var velocity_before_collision:Vector2;
 
@@ -35,6 +41,7 @@ func choose_skin(selected:int):
 			skins[i].visible = false
 
 func kick():
+	hit_sound.play()
 	for body in kick_area.get_overlapping_bodies():
 		if body is RigidBody2D:
 			var direction = Vector2(facing_direction*0.05, -0.02).normalized()
@@ -84,6 +91,7 @@ func _physics_process(delta: float) -> void:
 		#jump_count=1;
 		jump_count -= 1
 		velocity.y = JUMP_VELOCITY
+		jump_sound.play()
 	#pagriesanas
 	if is_on_floor():
 		jump_count = 1
@@ -97,6 +105,7 @@ func _physics_process(delta: float) -> void:
 		if not anim_sprite.animation=="Run" and not anim_sprite.animation == "Kick":
 			anim_sprite.stop()
 			anim_sprite.play("Run")
+			run_sound.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if not anim_sprite.animation == "Idle" and not anim_sprite.animation == "Kick":
