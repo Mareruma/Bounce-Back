@@ -18,6 +18,8 @@ var facing_direction := 1 ;
 #rigid body ietekmas kaut kas
 @export var push_force := 5.0
 
+var jump_count = 1
+
 var is_kicking:bool = false
 
 func _ready() -> void:
@@ -77,11 +79,15 @@ func _physics_process(delta: float) -> void:
 		
 	
 	#Leksana
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and jump_count > 0:
 		#is_jumping=true;
 		#jump_count=1;
+		jump_count -= 1
 		velocity.y = JUMP_VELOCITY
 	#pagriesanas
+	if is_on_floor():
+		jump_count = 1
+		
 	if(direction!=0):
 		facing_direction=sign(direction)
 	

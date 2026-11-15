@@ -8,8 +8,8 @@ func _process(delta: float) -> void:
 	if is_timer_running:
 		time += delta
 
-func addTime(time: float):
-	level_times.append(time)
+func addTime(new_time: float):
+	level_times.append(new_time)
 
 func get_average(numbers: Array[float]) -> float:
 	if numbers.is_empty():
