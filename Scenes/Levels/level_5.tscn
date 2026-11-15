@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://btrbb6lehnqyt" path="res://Scenes/duck.tscn" id="4_0fyhm"]
 [ext_resource type="Texture2D" uid="uid://y3kg388pmj4w" path="res://Assets/carrot.png" id="5_evokg"]
 [ext_resource type="Script" uid="uid://bydaj0u4gk1uh" path="res://Scripts/Levels/platform_vertical.gd" id="6_3koi7"]
-[ext_resource type="Script" uid="uid://b0y5bi7uy1rwk" path="res://Scripts/Levels/animatable_body_2d.gd" id="7_20kd1"]
+[ext_resource type="Script" uid="uid://dcm7b3pnlkjii" path="res://Scripts/Levels/animatable_body_2d_horizontal.gd" id="7_reooa"]
+[ext_resource type="Script" uid="uid://dd3sj0jcr4rf6" path="res://Scripts/Levels/animatable_body_2d_horizontal_oposite.gd" id="8_doouk"]
 [ext_resource type="PackedScene" uid="uid://pglt4rjbo7ty" path="res://Scenes/ui.tscn" id="8_reooa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dpyx"]
@@ -41,29 +42,29 @@ distance = -384.0
 size = Vector2(39, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sixep"]
-size = Vector2(30, 32.25)
+size = Vector2(134, 32.25)
 
 [node name="Level_5" type="Node2D" unique_id=547523218]
 script = ExtResource("1_wakwf")
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=1911295996]
-tile_map_data = PackedByteArray("AAAFABEAAQAEAAAAAAAGABEAAQAEAAAAAAAHABEAAQAEAAAAAAAIABEAAQAEAAAAAAAJABEAAQAEAAAAAAAKABEAAQAEAAAAAAALABEAAQAEAAAAAAAPABEAAQAEAAAAAAAQABEAAQAEAAAAAAARABEAAQAEAAAAAAASABEAAQAEAAAAAAATABEAAQAEAAAAAAAVABEAAQAEAAAAAAAWABEAAQAEAAAAAAAXABEAAQAEAAAAAAAEABEAAQAEAAAAAAAbABAAAQAIAAAAAAAcABAAAQAIAAAAAAAdABAAAQAIAAAAAAAeABAAAQAIAAAAAAAfABAAAQAIAAAAAAAgABAAAQAIAAAAAAAhABAAAQAIAAAAAAAiABAAAQAIAAAAAAAjABAAAQAIAAAAAAAlAA8AAQACAAAAAAAnAA0AAQACAAAAAAApAAsAAQAKAAAAAAArAAsAAQAKAAAAABAtAA0AAQACAAAAABAvAA8AAQACAAAAABAxABEAAQACAAAAABAzABMAAQACAAAAABA1ABUAAQAEAAAAAAA2ABUAAQAEAAAAAAAzABUAAQAEAAAAAAA6ABMAAQAKAAAAAAA8ABIAAQAKAAAAAAA+ABEAAQAKAAAAAABAABAAAQAKAAAAAABCAA8AAQAKAAAAAABEAA4AAQAKAAAAAAA=")
+tile_map_data = PackedByteArray("AAADABIAAQAEAAAAAAACABIAAQAEAAAAAAABABIAAQAEAAAAAAAAABIAAQAEAAAAAAAFABIAAQAEAAAAAAAGABIAAQAEAAAAAAAHABIAAQAEAAAAAAAIABIAAQAEAAAAAAAJABIAAQAEAAAAAAAnABMAAQAEAAAAAAAoABMAAQAEAAAAAAApABMAAQAEAAAAAAArABMAAQAEAAAAAAArABEAAQAEAAAAAAAKABIAAQAEAAAAAAA=")
 tile_set = SubResource("TileSet_3mqfk")
 
 [node name="Player" parent="." unique_id=872753299 instance=ExtResource("3_doouk")]
 position = Vector2(98, 251)
 
 [node name="Duck" parent="." unique_id=779076703 instance=ExtResource("4_0fyhm")]
-position = Vector2(149, 250)
+position = Vector2(152, 255)
 
 [node name="Finish" type="Area2D" parent="." unique_id=1345982307]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish" unique_id=938978715]
-position = Vector2(1128, 285)
+position = Vector2(632.1686, 243.11618)
 shape = SubResource("RectangleShape2D_wp5od")
 
 [node name="Sprite2D" type="Sprite2D" parent="Finish" unique_id=1764339959]
-position = Vector2(1127.8314, 284.88382)
+position = Vector2(632, 243)
 texture = ExtResource("5_evokg")
 
 [node name="Void" type="Area2D" parent="." unique_id=299740446]
@@ -87,31 +88,31 @@ offset_bottom = 301.0
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=216333518]
 position = Vector2(0, -1)
-script = ExtResource("7_20kd1")
+script = ExtResource("7_reooa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=372472642]
-position = Vector2(408, 280.125)
+position = Vector2(280, 301.125)
 shape = SubResource("RectangleShape2D_sixep")
 
 [node name="ColorRect" type="ColorRect" parent="AnimatableBody2D" unique_id=1527484318]
-offset_left = 393.0
-offset_top = 263.0
-offset_right = 423.0
-offset_bottom = 296.0
+offset_left = 213.0
+offset_top = 284.0
+offset_right = 352.0
+offset_bottom = 317.0
 
 [node name="AnimatableBody2D2" type="AnimatableBody2D" parent="." unique_id=378435685]
 position = Vector2(0, -1)
-script = ExtResource("7_20kd1")
+script = ExtResource("8_doouk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D2" unique_id=26733318]
-position = Vector2(904.2612, 345.4526)
+position = Vector2(504.26123, 300.45264)
 shape = SubResource("RectangleShape2D_sixep")
 
 [node name="ColorRect" type="ColorRect" parent="AnimatableBody2D2" unique_id=289786441]
-offset_left = 889.0
-offset_top = 329.0
-offset_right = 919.0
-offset_bottom = 362.0
+offset_left = 437.0
+offset_top = 284.0
+offset_right = 572.0
+offset_bottom = 317.0
 
 [node name="UI" parent="." unique_id=151335542 instance=ExtResource("8_reooa")]
 
