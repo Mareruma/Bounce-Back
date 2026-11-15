@@ -33,3 +33,6 @@ text = "Level: 1"
 
 [node name="Time" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=323700062]
 layout_mode = 2
+
+[node name="GlobalTime" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=1860634384]
+layout_mode = 2
