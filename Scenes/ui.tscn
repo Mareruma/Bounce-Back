@@ -24,7 +24,12 @@ theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer" unique_id=37893998]
 layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
 
 [node name="Score" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=399724611]
 layout_mode = 2
 text = "Level: 1"
+
+[node name="Time" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=323700062]
+layout_mode = 2
