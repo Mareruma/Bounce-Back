@@ -336,6 +336,7 @@ stream = ExtResource("11_gymyn")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=102904683]
 stream = ExtResource("12_pu2lt")
+volume_db = 15.0
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=1005410294]
 stream = ExtResource("13_ukyrk")

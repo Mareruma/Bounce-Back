@@ -29,10 +29,13 @@ alignment = 1
 
 [node name="Score" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=399724611]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Level: 1"
 
 [node name="Time" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=323700062]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="GlobalTime" type="Label" parent="Control/MarginContainer/HBoxContainer" unique_id=1860634384]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
