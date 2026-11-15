@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://vuscs67u8jo6" path="res://Assets/monstrs.png" id="5_ldgsr"]
 [ext_resource type="Texture2D" uid="uid://cvv0jn6d83ncx" path="res://Assets/navīga zvaigzne.png" id="6_o5yvi"]
 [ext_resource type="Texture2D" uid="uid://bge3hvwmajnva" path="res://Assets/pixil-frame-0 (1).png" id="7_rku1e"]
+[ext_resource type="Texture2D" uid="uid://chvd3c7pj6ayx" path="res://fons.png" id="8_v158k"]
 
 [node name="Game" type="Control" unique_id=1742394217]
 layout_mode = 3
@@ -77,6 +78,12 @@ icon = ExtResource("6_o5yvi")
 [node name="Duck" type="Button" parent="MarginContainer/MainV/BallSelection" unique_id=124445165]
 layout_mode = 2
 icon = ExtResource("7_rku1e")
+
+[node name="Fons" type="Sprite2D" parent="." unique_id=397774059]
+z_index = -1
+position = Vector2(548, 316.99997)
+scale = Vector2(6.9, 6.9)
+texture = ExtResource("8_v158k")
 
 [connection signal="pressed" from="MarginContainer/MainV/EventButtons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/MainV/EventButtons/Exit" to="." method="_on_exit_pressed"]

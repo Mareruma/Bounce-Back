@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5sljpfui4cn8"
-path="res://.godot/imported/sakum fails.png-2fa77c503d2292eee7cdf85ccaafe9dc.ctex"
+uid="uid://bkny1wfcrb5cb"
+path="res://.godot/imported/you won.jpeg-4e94f226100927a258813977672d2a2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sakum fails.png"
-dest_files=["res://.godot/imported/sakum fails.png-2fa77c503d2292eee7cdf85ccaafe9dc.ctex"]
+source_file="res://Assets/you won.jpeg"
+dest_files=["res://.godot/imported/you won.jpeg-4e94f226100927a258813977672d2a2a.ctex"]
 
 [params]
 
