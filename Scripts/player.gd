@@ -94,11 +94,13 @@ func _physics_process(delta: float) -> void:
 	#x ass kustiba
 	if direction:
 		velocity.x = direction * SPEED
-		if not anim_sprite.is_playing():
+		if not anim_sprite.animation=="Run" and not anim_sprite.animation == "Kick":
+			anim_sprite.stop()
 			anim_sprite.play("Run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if not anim_sprite.is_playing():
+		if not anim_sprite.animation == "Idle" and not anim_sprite.animation == "Kick":
+			anim_sprite.stop()
 			anim_sprite.play("Idle")
 
 	update_animation(direction)
@@ -109,6 +111,7 @@ func kick_animation():
 	anim_sprite.stop()
 	anim_sprite.play("Kick")
 	await anim_sprite.animation_finished
+	anim_sprite.play("Idle")
 	#print("hi mom")
 	
 func update_animation(direction: float) -> void:

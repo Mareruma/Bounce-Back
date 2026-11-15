@@ -52,7 +52,7 @@ radius = 4.0
 height = 14.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tx1dd"]
-size = Vector2(12, 12)
+size = Vector2(14, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
 atlas = ExtResource("8_8erm5")
@@ -207,7 +207,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_igrcy")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"Idle",
 "speed": 9.0
 }, {
@@ -316,9 +316,10 @@ offset_transform_position = Vector2(100, -100)
 text = "score::"
 
 [node name="KickArea" type="Area2D" parent="." unique_id=421994624]
+position = Vector2(-1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KickArea" unique_id=1879987777]
-position = Vector2(-2, -2)
+position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_tx1dd")
 
 [node name="SpriteSamurai2D" type="AnimatedSprite2D" parent="." unique_id=685283309]
