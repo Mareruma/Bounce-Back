@@ -1,4 +1,8 @@
 extends Node2D
+@onready var ui = $UI
+
+func _ready() -> void:
+	ui.update_score(2)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Duck":

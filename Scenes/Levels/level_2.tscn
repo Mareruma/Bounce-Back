@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://y3kg388pmj4w" path="res://Assets/carrot.png" id="5_u40f0"]
 [ext_resource type="Script" uid="uid://bydaj0u4gk1uh" path="res://Scripts/Levels/platform_vertical.gd" id="6_0x4y1"]
 [ext_resource type="Script" uid="uid://b0y5bi7uy1rwk" path="res://Scripts/Levels/animatable_body_2d.gd" id="7_uqiic"]
+[ext_resource type="PackedScene" uid="uid://pglt4rjbo7ty" path="res://Scenes/ui.tscn" id="8_pnnky"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dpyx"]
 texture = ExtResource("2_pnnky")
@@ -111,6 +112,8 @@ offset_left = 889.0
 offset_top = 329.0
 offset_right = 919.0
 offset_bottom = 362.0
+
+[node name="UI" parent="." unique_id=151335542 instance=ExtResource("8_pnnky")]
 
 [connection signal="body_entered" from="Finish" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Void" to="." method="_on_void_body_entered"]
