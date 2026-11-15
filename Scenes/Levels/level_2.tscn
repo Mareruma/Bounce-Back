@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://0jlt40ayi1on"]
 
 [ext_resource type="Script" uid="uid://xus7m47tndtj" path="res://Scripts/Levels/level_2.gd" id="1_fphuk"]
+[ext_resource type="Texture2D" uid="uid://chvd3c7pj6ayx" path="res://fons.png" id="2_blpqv"]
 [ext_resource type="Texture2D" uid="uid://di2p8v3h0uxi7" path="res://Assets/tileset.png" id="2_pnnky"]
 [ext_resource type="PackedScene" uid="uid://cbci8hx40y08l" path="res://Scenes/player.tscn" id="3_blpqv"]
 [ext_resource type="PackedScene" uid="uid://btrbb6lehnqyt" path="res://Scenes/duck.tscn" id="4_1jlnc"]
@@ -8,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bydaj0u4gk1uh" path="res://Scripts/Levels/platform_vertical.gd" id="6_0x4y1"]
 [ext_resource type="Script" uid="uid://b0y5bi7uy1rwk" path="res://Scripts/Levels/animatable_body_2d.gd" id="7_uqiic"]
 [ext_resource type="PackedScene" uid="uid://pglt4rjbo7ty" path="res://Scenes/ui.tscn" id="8_pnnky"]
+[ext_resource type="Texture2D" uid="uid://do58esynod8yx" path="res://Assets/block.png" id="9_1jlnc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dpyx"]
 texture = ExtResource("2_pnnky")
@@ -45,6 +47,12 @@ size = Vector2(30, 32.25)
 
 [node name="Level_2" type="Node2D" unique_id=547523218]
 script = ExtResource("1_fphuk")
+
+[node name="Fons" type="Sprite2D" parent="." unique_id=1886321645]
+z_index = -1
+position = Vector2(548, 48.99997)
+scale = Vector2(6.9, 6.9)
+texture = ExtResource("2_blpqv")
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=1911295996]
 tile_map_data = PackedByteArray("AAAFABEAAQAEAAAAAAAGABEAAQAEAAAAAAAHABEAAQAEAAAAAAAIABEAAQAEAAAAAAAJABEAAQAEAAAAAAAKABEAAQAEAAAAAAALABEAAQAEAAAAAAAPABEAAQAEAAAAAAAQABEAAQAEAAAAAAARABEAAQAEAAAAAAASABEAAQAEAAAAAAATABEAAQAEAAAAAAAVABEAAQAEAAAAAAAWABEAAQAEAAAAAAAXABEAAQAEAAAAAAAEABEAAQAEAAAAAAAbABAAAQAIAAAAAAAcABAAAQAIAAAAAAAdABAAAQAIAAAAAAAeABAAAQAIAAAAAAAfABAAAQAIAAAAAAAgABAAAQAIAAAAAAAhABAAAQAIAAAAAAAiABAAAQAIAAAAAAAjABAAAQAIAAAAAAAlAA8AAQACAAAAAAAnAA0AAQACAAAAAAApAAsAAQAKAAAAAAArAAsAAQAKAAAAABAtAA0AAQACAAAAABAvAA8AAQACAAAAABAxABEAAQACAAAAABAzABMAAQACAAAAABA1ABUAAQAEAAAAAAA2ABUAAQAEAAAAAAAzABUAAQAEAAAAAAA6ABMAAQAKAAAAAAA8ABIAAQAKAAAAAAA+ABEAAQAKAAAAAABAABAAAQAKAAAAAABCAA8AAQAKAAAAAABEAA4AAQAKAAAAAAA=")
@@ -94,11 +102,10 @@ script = ExtResource("7_uqiic")
 position = Vector2(408, 280.125)
 shape = SubResource("RectangleShape2D_sixep")
 
-[node name="ColorRect" type="ColorRect" parent="AnimatableBody2D" unique_id=1527484318]
-offset_left = 393.0
-offset_top = 263.0
-offset_right = 423.0
-offset_bottom = 296.0
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=412405297]
+position = Vector2(408, 280)
+scale = Vector2(0.11823015, 0.1328124)
+texture = ExtResource("9_1jlnc")
 
 [node name="AnimatableBody2D2" type="AnimatableBody2D" parent="." unique_id=378435685]
 position = Vector2(0, -1)
@@ -108,11 +115,10 @@ script = ExtResource("7_uqiic")
 position = Vector2(904.2612, 345.4526)
 shape = SubResource("RectangleShape2D_sixep")
 
-[node name="ColorRect" type="ColorRect" parent="AnimatableBody2D2" unique_id=289786441]
-offset_left = 889.0
-offset_top = 329.0
-offset_right = 919.0
-offset_bottom = 362.0
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D2" unique_id=370506436]
+position = Vector2(904, 345.682)
+scale = Vector2(0.12003111, 0.13032818)
+texture = ExtResource("9_1jlnc")
 
 [node name="UI" parent="." unique_id=151335542 instance=ExtResource("8_pnnky")]
 

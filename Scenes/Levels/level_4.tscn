@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://rxjkut0entx4" path="res://Scripts/Levels/level_4.gd" id="1_i4hbv"]
 [ext_resource type="Texture2D" uid="uid://di2p8v3h0uxi7" path="res://Assets/tileset.png" id="2_h0uxt"]
+[ext_resource type="Texture2D" uid="uid://chvd3c7pj6ayx" path="res://fons.png" id="2_keyqw"]
 [ext_resource type="PackedScene" uid="uid://cbci8hx40y08l" path="res://Scenes/player.tscn" id="3_keyqw"]
 [ext_resource type="PackedScene" uid="uid://btrbb6lehnqyt" path="res://Scenes/duck.tscn" id="4_gsxik"]
 [ext_resource type="Texture2D" uid="uid://y3kg388pmj4w" path="res://Assets/carrot.png" id="5_3asqb"]
 [ext_resource type="Script" uid="uid://bydaj0u4gk1uh" path="res://Scripts/Levels/platform_vertical.gd" id="6_slbhm"]
-[ext_resource type="Script" uid="uid://b0y5bi7uy1rwk" path="res://Scripts/Levels/animatable_body_2d.gd" id="7_i5g5g"]
 [ext_resource type="PackedScene" uid="uid://pglt4rjbo7ty" path="res://Scenes/ui.tscn" id="8_h0uxt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dpyx"]
@@ -40,11 +40,14 @@ distance = -450.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5f3p6"]
 size = Vector2(39, 38)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sixep"]
-size = Vector2(30, 32.25)
-
 [node name="Level_4" type="Node2D" unique_id=547523218]
 script = ExtResource("1_i4hbv")
+
+[node name="Fons" type="Sprite2D" parent="." unique_id=69999873]
+z_index = -1
+position = Vector2(548, 48.99997)
+scale = Vector2(6.9, 6.9)
+texture = ExtResource("2_keyqw")
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=1911295996]
 tile_map_data = PackedByteArray("AAAFABEAAQAEAAAAAAAGABEAAQAEAAAAAAAHABEAAQAEAAAAAAAIABEAAQAEAAAAAAAJABEAAQAEAAAAAAAKABEAAQAEAAAAAAALABEAAQAEAAAAAAAEABEAAQAEAAAAAAAMABEAAQAEAAAAAAAVAAkAAQAEAAAAAAAWAAkAAQAEAAAAAAAXAAgAAQAEAAAAAAAXAAcAAQAEAAAAAAAOABEAAQAEAAAAAAAPABEAAQAEAAAAAAAQABEAAQAEAAAAAAARABEAAQAEAAAAAAASABEAAQAEAAAAAAATABEAAQAEAAAAAAAUABEAAQAEAAAAAAAVABEAAQAEAAAAAAAVABAAAQAEAAAAAAAVAA8AAQAEAAAAAAAVAAoAAQAEAAAAAAAVAAsAAQAEAAAAAAAVAAwAAQAEAAAAAAAVAA0AAQAEAAAAAAAVAA4AAQAEAAAAAAAXAAkAAQAEAAAAAAA=")
@@ -85,34 +88,6 @@ offset_left = -46.0
 offset_top = 261.0
 offset_right = -6.0
 offset_bottom = 301.0
-
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=216333518]
-position = Vector2(0, -1)
-script = ExtResource("7_i5g5g")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=372472642]
-position = Vector2(408, 280.125)
-shape = SubResource("RectangleShape2D_sixep")
-
-[node name="ColorRect" type="ColorRect" parent="AnimatableBody2D" unique_id=1527484318]
-offset_left = 393.0
-offset_top = 263.0
-offset_right = 423.0
-offset_bottom = 296.0
-
-[node name="AnimatableBody2D2" type="AnimatableBody2D" parent="." unique_id=378435685]
-position = Vector2(0, -1)
-script = ExtResource("7_i5g5g")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D2" unique_id=26733318]
-position = Vector2(904.2612, 345.4526)
-shape = SubResource("RectangleShape2D_sixep")
-
-[node name="ColorRect" type="ColorRect" parent="AnimatableBody2D2" unique_id=289786441]
-offset_left = 889.0
-offset_top = 329.0
-offset_right = 919.0
-offset_bottom = 362.0
 
 [node name="UI" parent="." unique_id=151335542 instance=ExtResource("8_h0uxt")]
 

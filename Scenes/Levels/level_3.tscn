@@ -1,12 +1,14 @@
 [gd_scene format=4 uid="uid://bvqndq3gn8et5"]
 
 [ext_resource type="Script" uid="uid://dlcs0uobu30gy" path="res://Scripts/Levels/level_3.gd" id="1_167vu"]
+[ext_resource type="Texture2D" uid="uid://chvd3c7pj6ayx" path="res://fons.png" id="2_osqx1"]
 [ext_resource type="Texture2D" uid="uid://di2p8v3h0uxi7" path="res://Assets/tileset.png" id="2_x1k1j"]
 [ext_resource type="PackedScene" uid="uid://cbci8hx40y08l" path="res://Scenes/player.tscn" id="3_4ahh4"]
 [ext_resource type="PackedScene" uid="uid://btrbb6lehnqyt" path="res://Scenes/duck.tscn" id="4_dl55b"]
 [ext_resource type="Texture2D" uid="uid://y3kg388pmj4w" path="res://Assets/carrot.png" id="5_osqx1"]
 [ext_resource type="Script" uid="uid://bydaj0u4gk1uh" path="res://Scripts/Levels/platform_vertical.gd" id="6_sy7oa"]
 [ext_resource type="Script" uid="uid://b0y5bi7uy1rwk" path="res://Scripts/Levels/animatable_body_2d.gd" id="7_md4x4"]
+[ext_resource type="Texture2D" uid="uid://do58esynod8yx" path="res://Assets/block.png" id="8_dl55b"]
 [ext_resource type="Script" uid="uid://c4w16ugx4wm4f" path="res://Scripts/Levels/animatable_body_2d_oposite.gd" id="8_x1k1j"]
 [ext_resource type="PackedScene" uid="uid://pglt4rjbo7ty" path="res://Scenes/ui.tscn" id="9_4ahh4"]
 
@@ -46,6 +48,12 @@ size = Vector2(30, 32.25)
 
 [node name="Level_3" type="Node2D" unique_id=547523218]
 script = ExtResource("1_167vu")
+
+[node name="Fons" type="Sprite2D" parent="." unique_id=867551232]
+z_index = -1
+position = Vector2(548, 48.99997)
+scale = Vector2(6.9, 6.9)
+texture = ExtResource("2_osqx1")
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=1911295996]
 tile_map_data = PackedByteArray("AAAFABEAAQAEAAAAAAAGABEAAQAEAAAAAAAHABEAAQAEAAAAAAAIABEAAQAEAAAAAAAJABEAAQAEAAAAAAAKABEAAQAEAAAAAAALABEAAQAEAAAAAAAEABEAAQAEAAAAAAANABEAAQAEAAAAAAAOABEAAQAEAAAAAAAPABEAAQAEAAAAAAAQABEAAQAEAAAAAAARABEAAQAEAAAAAAASABEAAQAEAAAAAAATABEAAQAEAAAAAAAUABEAAQAEAAAAAAAVABEAAQAEAAAAAAAWABEAAQAEAAAAAAA=")
@@ -96,11 +104,10 @@ script = ExtResource("7_md4x4")
 position = Vector2(408, 280.125)
 shape = SubResource("RectangleShape2D_sixep")
 
-[node name="ColorRect" type="ColorRect" parent="AnimatableBody2D" unique_id=1527484318]
-offset_left = 393.0
-offset_top = 263.0
-offset_right = 423.0
-offset_bottom = 296.0
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=1817401572]
+position = Vector2(408, 279.5)
+scale = Vector2(0.11718738, 0.1289063)
+texture = ExtResource("8_dl55b")
 
 [node name="AnimatableBody2D2" type="AnimatableBody2D" parent="." unique_id=378435685]
 position = Vector2(0, -1)
@@ -110,11 +117,10 @@ script = ExtResource("8_x1k1j")
 position = Vector2(443.26123, 279.4526)
 shape = SubResource("RectangleShape2D_sixep")
 
-[node name="ColorRect" type="ColorRect" parent="AnimatableBody2D2" unique_id=289786441]
-offset_left = 428.0
-offset_top = 263.0
-offset_right = 458.0
-offset_bottom = 296.0
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D2" unique_id=875726606]
+position = Vector2(443.5, 279.5)
+scale = Vector2(0.1210937, 0.12890619)
+texture = ExtResource("8_dl55b")
 
 [node name="UI" parent="." unique_id=151335542 instance=ExtResource("9_4ahh4")]
 
