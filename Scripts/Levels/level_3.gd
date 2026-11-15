@@ -5,6 +5,7 @@ func _ready() -> void:
 	ui.update_score(3)
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Duck":
+		Main.addTime(ui.time)
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/Levels/level_4.tscn")
 		
 func _on_void_body_entered(_body: Node2D) -> void:

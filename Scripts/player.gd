@@ -40,7 +40,7 @@ func kick():
 func kick_up():
 	for body in kick_area.get_overlapping_bodies():
 		if body is RigidBody2D:
-			var direction = Vector2(facing_direction*0.15, -2).normalized()
+			var direction = Vector2(facing_direction*0.2, -2).normalized()
 			body.apply_central_impulse(direction * kick_force)
 
 func _physics_process(delta: float) -> void:
