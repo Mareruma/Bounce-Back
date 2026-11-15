@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pv47i63bmpw2"
-path="res://.godot/imported/boling bumba.png-a643651ec74be311380b30dbcdecb976.ctex"
+uid="uid://c4tmc2618vgyh"
+path="res://.godot/imported/apelsins.png-d35dfe3d50c7770c1c4bdefaf90021df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://boling bumba.png"
-dest_files=["res://.godot/imported/boling bumba.png-a643651ec74be311380b30dbcdecb976.ctex"]
+source_file="res://Assets/apelsins.png"
+dest_files=["res://.godot/imported/apelsins.png-d35dfe3d50c7770c1c4bdefaf90021df.ctex"]
 
 [params]
 
