@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d4ayvgmyguaqs" path="res://Scripts/Levels/level_1.gd" id="1_cyadu"]
 [ext_resource type="Texture2D" uid="uid://di2p8v3h0uxi7" path="res://Assets/tileset.png" id="1_tlcug"]
 [ext_resource type="PackedScene" uid="uid://cbci8hx40y08l" path="res://Scenes/player.tscn" id="2_3mqfk"]
+[ext_resource type="Texture2D" uid="uid://chvd3c7pj6ayx" path="res://fons.png" id="2_rb0md"]
 [ext_resource type="PackedScene" uid="uid://btrbb6lehnqyt" path="res://Scenes/duck.tscn" id="3_iixi8"]
 [ext_resource type="Texture2D" uid="uid://y3kg388pmj4w" path="res://Assets/carrot.png" id="5_xgxfi"]
 [ext_resource type="Script" uid="uid://bydaj0u4gk1uh" path="res://Scripts/Levels/platform_vertical.gd" id="6_xgxfi"]
@@ -44,6 +45,12 @@ size = Vector2(30, 32.25)
 
 [node name="Level_1" type="Node2D" unique_id=547523218]
 script = ExtResource("1_cyadu")
+
+[node name="Fons" type="Sprite2D" parent="." unique_id=590598543]
+z_index = -1
+position = Vector2(548, 48.99997)
+scale = Vector2(6.9, 6.9)
+texture = ExtResource("2_rb0md")
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=1911295996]
 tile_map_data = PackedByteArray("AAABAA0AAQACAAAAABADAA8AAQACAAAAABABAA8AAQAEAAAAAAAFABEAAQAEAAAAAAADABEAAQAEAAAAAAAGABEAAQAEAAAAAAAHABEAAQAEAAAAAAAIABEAAQAEAAAAAAAJABEAAQAEAAAAAAAKABEAAQAEAAAAAAALABEAAQAEAAAAAAAMABEAAQAEAAAAAAANABEAAQAEAAAAAAAOABEAAQAEAAAAAAAPABEAAQAEAAAAAAAQABEAAQAEAAAAAAARABEAAQAEAAAAAAASABEAAQAEAAAAAAATABEAAQAEAAAAAAAUABEAAQAEAAAAAAAVABEAAQAEAAAAAAAWABEAAQAEAAAAAAAXABEAAQAEAAAAAAABABEAAQAEAAAAAAAbABEAAQAEAAAAAAAXAA8AAQAKAAAAAAAbAA8AAQAKAAAAABAdABEAAQAEAAAAAAAeABEAAQAEAAAAAGAfABEAAQAEAAAAAGAgABEAAQAEAAAAAGAhABEAAQAEAAAAAGAiABEAAQAEAAAAAGAjABEAAQAEAAAAAGAkABEAAQAEAAAAAGAoABEAAQAEAAAAAGApABEAAQAEAAAAAGAqABEAAQAEAAAAAGArABEAAQAEAAAAAGAsABEAAQAEAAAAAGAtABEAAQAEAAAAAGAuABEAAQAEAAAAAGAvABEAAQAEAAAAAGAwABEAAQAEAAAAAGAxABEAAQAEAAAAAGAyABEAAQAEAAAAAGAyAA8AAQAKAAAAAAA5ABEAAQAEAAAAAAA6ABEAAQAEAAAAAAA7ABEAAQAEAAAAAAA8ABEAAQAEAAAAAAA9ABEAAQAEAAAAAAA4ABEAAQAEAAAAAAA=")
