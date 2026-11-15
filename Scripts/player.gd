@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -320.0
 @export var kick_range_offset := 5.0
 #KickArea sprite
 @onready var kick_area = $KickArea
+@onready var skins = [$Sprite2D, $SpriteSamurai2D]
 @onready var anim_sprite: AnimatedSprite2D = $Sprite2D
 
 #Vajag lai butu atsperigs
@@ -20,7 +21,16 @@ var facing_direction := 1 ;
 var is_kicking:bool = false
 
 func _ready() -> void:
+	choose_skin(1)
 	anim_sprite.animation_finished.connect(_on_animation_finished)
+
+func choose_skin(selected:int):
+	for i in range(skins.size()):
+		if i==selected:
+			skins[i].visible = true
+			anim_sprite=skins[i]
+		else:
+			skins[i].visible = false
 
 func kick():
 	for body in kick_area.get_overlapping_bodies():
@@ -78,19 +88,22 @@ func _physics_process(delta: float) -> void:
 	#x ass kustiba
 	if direction:
 		velocity.x = direction * SPEED
-		anim_sprite.play("Run")
+		if not anim_sprite.is_playing():
+			anim_sprite.play("Run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if not anim_sprite.is_playing():
+			anim_sprite.play("Idle")
 
 	update_animation(direction)
 	move_and_slide()
 
 func kick_animation():
 	is_kicking = true
+	anim_sprite.stop()
 	anim_sprite.play("Kick")
 	await anim_sprite.animation_finished
 	#print("hi mom")
-	anim_sprite.play("Idle")
 	
 func update_animation(direction: float) -> void:
 	if direction > 0:
@@ -102,9 +115,12 @@ func update_animation(direction: float) -> void:
 		return
 	
 	if direction != 0:
+		if anim_sprite.animation=="Idle":
+			anim_sprite.stop()
 		anim_sprite.play("Run")
-	else:
-		anim_sprite.play("Idle")
+	elif not anim_sprite.is_playing():
+		#anim_sprite.play("Idle")
+		pass
 
 func _on_animation_finished():
 	if anim_sprite.animation == "kick":
