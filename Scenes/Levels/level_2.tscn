@@ -69,6 +69,7 @@ texture = ExtResource("5_u40f0")
 [node name="Void" type="Area2D" parent="." unique_id=299740446]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Void" unique_id=162759750]
+position = Vector2(0, 135)
 shape = SubResource("WorldBoundaryShape2D_wp5od")
 
 [node name="Platform_vertical" type="Area2D" parent="." unique_id=1835595258]

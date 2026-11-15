@@ -1,0 +1,119 @@
+[gd_scene format=4 uid="uid://bvqndq3gn8et5"]
+
+[ext_resource type="Script" uid="uid://dlcs0uobu30gy" path="res://Scripts/Levels/level_3.gd" id="1_167vu"]
+[ext_resource type="Texture2D" uid="uid://di2p8v3h0uxi7" path="res://Assets/tileset.png" id="2_x1k1j"]
+[ext_resource type="PackedScene" uid="uid://cbci8hx40y08l" path="res://Scenes/player.tscn" id="3_4ahh4"]
+[ext_resource type="PackedScene" uid="uid://btrbb6lehnqyt" path="res://Scenes/duck.tscn" id="4_dl55b"]
+[ext_resource type="Texture2D" uid="uid://y3kg388pmj4w" path="res://Assets/carrot.png" id="5_osqx1"]
+[ext_resource type="Script" uid="uid://bydaj0u4gk1uh" path="res://Scripts/Levels/platform_vertical.gd" id="6_sy7oa"]
+[ext_resource type="Script" uid="uid://b0y5bi7uy1rwk" path="res://Scripts/Levels/animatable_body_2d.gd" id="7_md4x4"]
+[ext_resource type="Script" uid="uid://c4w16ugx4wm4f" path="res://Scripts/Levels/animatable_body_2d_oposite.gd" id="8_x1k1j"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dpyx"]
+texture = ExtResource("2_x1k1j")
+2:0/size_in_atlas = Vector2i(2, 2)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.0791531, -1.0791512, 15.827568, -15.46785, 15.827568, 16.367144, -15.827568, 16.00743)
+4:0/size_in_atlas = Vector2i(2, 2)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.827568, -15.827568, 15.827568, -15.46785, 15.827568, 16.367144, -15.827568, 16.00743)
+8:0/size_in_atlas = Vector2i(2, 2)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.007427, -0.17985725, 15.827566, 0.35971832, 15.827568, 16.367144, -15.827568, 16.00743)
+10:0/size_in_atlas = Vector2i(2, 2)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(15.827566, 0.35971832, 15.827568, 16.367144, -15.827568, 16.00743)
+12:0/size_in_atlas = Vector2i(2, 2)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.63726044, -16.250168, 15.612907, -16.250168, 15.827568, 16.367144, -15.827568, 16.00743)
+
+[sub_resource type="TileSet" id="TileSet_3mqfk"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_4dpyx")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
+size = Vector2(33, 34)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wp5od"]
+distance = -384.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f3p6"]
+size = Vector2(39, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sixep"]
+size = Vector2(30, 32.25)
+
+[node name="Level_3" type="Node2D" unique_id=547523218]
+script = ExtResource("1_167vu")
+
+[node name="TileMap" type="TileMapLayer" parent="." unique_id=1911295996]
+tile_map_data = PackedByteArray("AAAFABEAAQAEAAAAAAAGABEAAQAEAAAAAAAHABEAAQAEAAAAAAAIABEAAQAEAAAAAAAJABEAAQAEAAAAAAAKABEAAQAEAAAAAAALABEAAQAEAAAAAAAEABEAAQAEAAAAAAANABEAAQAEAAAAAAAOABEAAQAEAAAAAAAPABEAAQAEAAAAAAAQABEAAQAEAAAAAAARABEAAQAEAAAAAAASABEAAQAEAAAAAAATABEAAQAEAAAAAAAUABEAAQAEAAAAAAAVABEAAQAEAAAAAAAWABEAAQAEAAAAAAA=")
+tile_set = SubResource("TileSet_3mqfk")
+
+[node name="Player" parent="." unique_id=872753299 instance=ExtResource("3_4ahh4")]
+position = Vector2(98, 251)
+
+[node name="Duck" parent="." unique_id=779076703 instance=ExtResource("4_dl55b")]
+position = Vector2(149, 250)
+
+[node name="Finish" type="Area2D" parent="." unique_id=1345982307]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish" unique_id=938978715]
+position = Vector2(537.1686, 277.11618)
+shape = SubResource("RectangleShape2D_wp5od")
+
+[node name="Sprite2D" type="Sprite2D" parent="Finish" unique_id=1764339959]
+position = Vector2(537, 277)
+texture = ExtResource("5_osqx1")
+
+[node name="Void" type="Area2D" parent="." unique_id=299740446]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Void" unique_id=162759750]
+shape = SubResource("WorldBoundaryShape2D_wp5od")
+
+[node name="Platform_vertical" type="Area2D" parent="." unique_id=1835595258]
+visible = false
+script = ExtResource("6_sy7oa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_vertical" unique_id=415348813]
+visible = false
+position = Vector2(-25.5, 281)
+shape = SubResource("RectangleShape2D_5f3p6")
+
+[node name="ColorRect" type="ColorRect" parent="Platform_vertical" unique_id=2086520194]
+visible = false
+offset_left = -46.0
+offset_top = 261.0
+offset_right = -6.0
+offset_bottom = 301.0
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=216333518]
+position = Vector2(0, -1)
+script = ExtResource("7_md4x4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=372472642]
+position = Vector2(408, 280.125)
+shape = SubResource("RectangleShape2D_sixep")
+
+[node name="ColorRect" type="ColorRect" parent="AnimatableBody2D" unique_id=1527484318]
+offset_left = 393.0
+offset_top = 263.0
+offset_right = 423.0
+offset_bottom = 296.0
+
+[node name="AnimatableBody2D2" type="AnimatableBody2D" parent="." unique_id=378435685]
+position = Vector2(0, -1)
+script = ExtResource("8_x1k1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D2" unique_id=26733318]
+position = Vector2(443.26123, 279.4526)
+shape = SubResource("RectangleShape2D_sixep")
+
+[node name="ColorRect" type="ColorRect" parent="AnimatableBody2D2" unique_id=289786441]
+offset_left = 428.0
+offset_top = 263.0
+offset_right = 458.0
+offset_bottom = 296.0
+
+[connection signal="body_entered" from="Finish" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Void" to="." method="_on_void_body_entered"]
