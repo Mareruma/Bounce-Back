@@ -5,8 +5,8 @@ var direction = 1
 
 func _ready() -> void:
 	while(true):
-		await gotopos(Vector2(0, -45))
-		await gotopos(Vector2(0,15))
+		await gotopos(Vector2(0, 45))
+		await gotopos(Vector2(0,-30))
 
 func gotopos(pos):
 	var newtween = create_tween()

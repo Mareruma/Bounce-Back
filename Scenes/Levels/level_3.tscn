@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://y3kg388pmj4w" path="res://Assets/carrot.png" id="5_osqx1"]
 [ext_resource type="Script" uid="uid://bydaj0u4gk1uh" path="res://Scripts/Levels/platform_vertical.gd" id="6_sy7oa"]
 [ext_resource type="Script" uid="uid://b0y5bi7uy1rwk" path="res://Scripts/Levels/animatable_body_2d.gd" id="7_md4x4"]
+[ext_resource type="Script" uid="uid://c4w16ugx4wm4f" path="res://Scripts/Levels/animatable_body_2d_oposite.gd" id="8_x1k1j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dpyx"]
 texture = ExtResource("2_x1k1j")
@@ -46,7 +47,7 @@ size = Vector2(30, 32.25)
 script = ExtResource("1_167vu")
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=1911295996]
-tile_map_data = PackedByteArray("AAAFABEAAQAEAAAAAAAGABEAAQAEAAAAAAAHABEAAQAEAAAAAAAIABEAAQAEAAAAAAAJABEAAQAEAAAAAAAKABEAAQAEAAAAAAALABEAAQAEAAAAAAAPABEAAQAEAAAAAAAQABEAAQAEAAAAAAARABEAAQAEAAAAAAASABEAAQAEAAAAAAATABEAAQAEAAAAAAAVABEAAQAEAAAAAAAWABEAAQAEAAAAAAAXABEAAQAEAAAAAAAEABEAAQAEAAAAAAAbABAAAQAIAAAAAAAcABAAAQAIAAAAAAAdABAAAQAIAAAAAAAeABAAAQAIAAAAAAAfABAAAQAIAAAAAAAgABAAAQAIAAAAAAAhABAAAQAIAAAAAAAiABAAAQAIAAAAAAAjABAAAQAIAAAAAAAlAA8AAQACAAAAAAAnAA0AAQACAAAAAAApAAsAAQAKAAAAAAArAAsAAQAKAAAAABAtAA0AAQACAAAAABAvAA8AAQACAAAAABAxABEAAQACAAAAABAzABMAAQACAAAAABA1ABUAAQAEAAAAAAA2ABUAAQAEAAAAAAAzABUAAQAEAAAAAAA6ABMAAQAKAAAAAAA8ABIAAQAKAAAAAAA+ABEAAQAKAAAAAABAABAAAQAKAAAAAABCAA8AAQAKAAAAAABEAA4AAQAKAAAAAAA=")
+tile_map_data = PackedByteArray("AAAFABEAAQAEAAAAAAAGABEAAQAEAAAAAAAHABEAAQAEAAAAAAAIABEAAQAEAAAAAAAJABEAAQAEAAAAAAAKABEAAQAEAAAAAAALABEAAQAEAAAAAAAEABEAAQAEAAAAAAANABEAAQAEAAAAAAAOABEAAQAEAAAAAAAPABEAAQAEAAAAAAAQABEAAQAEAAAAAAARABEAAQAEAAAAAAASABEAAQAEAAAAAAATABEAAQAEAAAAAAAUABEAAQAEAAAAAAAVABEAAQAEAAAAAAAWABEAAQAEAAAAAAA=")
 tile_set = SubResource("TileSet_3mqfk")
 
 [node name="Player" parent="." unique_id=872753299 instance=ExtResource("3_4ahh4")]
@@ -58,11 +59,11 @@ position = Vector2(149, 250)
 [node name="Finish" type="Area2D" parent="." unique_id=1345982307]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Finish" unique_id=938978715]
-position = Vector2(1128, 285)
+position = Vector2(537.1686, 277.11618)
 shape = SubResource("RectangleShape2D_wp5od")
 
 [node name="Sprite2D" type="Sprite2D" parent="Finish" unique_id=1764339959]
-position = Vector2(1127.8314, 284.88382)
+position = Vector2(537, 277)
 texture = ExtResource("5_osqx1")
 
 [node name="Void" type="Area2D" parent="." unique_id=299740446]
@@ -75,10 +76,12 @@ visible = false
 script = ExtResource("6_sy7oa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_vertical" unique_id=415348813]
+visible = false
 position = Vector2(-25.5, 281)
 shape = SubResource("RectangleShape2D_5f3p6")
 
 [node name="ColorRect" type="ColorRect" parent="Platform_vertical" unique_id=2086520194]
+visible = false
 offset_left = -46.0
 offset_top = 261.0
 offset_right = -6.0
@@ -100,17 +103,17 @@ offset_bottom = 296.0
 
 [node name="AnimatableBody2D2" type="AnimatableBody2D" parent="." unique_id=378435685]
 position = Vector2(0, -1)
-script = ExtResource("7_md4x4")
+script = ExtResource("8_x1k1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D2" unique_id=26733318]
-position = Vector2(904.2612, 345.4526)
+position = Vector2(443.26123, 279.4526)
 shape = SubResource("RectangleShape2D_sixep")
 
 [node name="ColorRect" type="ColorRect" parent="AnimatableBody2D2" unique_id=289786441]
-offset_left = 889.0
-offset_top = 329.0
-offset_right = 919.0
-offset_bottom = 362.0
+offset_left = 428.0
+offset_top = 263.0
+offset_right = 458.0
+offset_bottom = 296.0
 
 [connection signal="body_entered" from="Finish" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Void" to="." method="_on_void_body_entered"]

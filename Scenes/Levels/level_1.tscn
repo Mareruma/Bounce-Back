@@ -33,7 +33,7 @@ sources/1 = SubResource("TileSetAtlasSource_4dpyx")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wp5od"]
-distance = -384.0
+distance = -381.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5f3p6"]
 size = Vector2(39, 38)
@@ -67,6 +67,7 @@ texture = ExtResource("5_xgxfi")
 [node name="Void" type="Area2D" parent="." unique_id=299740446]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Void" unique_id=162759750]
+position = Vector2(0, 45)
 shape = SubResource("WorldBoundaryShape2D_wp5od")
 
 [node name="Platform_vertical" type="Area2D" parent="." unique_id=1835595258]
