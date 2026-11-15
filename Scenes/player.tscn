@@ -333,10 +333,11 @@ animation = &"Idle"
 
 [node name="RunSound" type="AudioStreamPlayer2D" parent="." unique_id=1672585566]
 stream = ExtResource("11_gymyn")
+volume_db = 3.0
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=102904683]
 stream = ExtResource("12_pu2lt")
-volume_db = 15.0
+volume_db = 10.0
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=1005410294]
 stream = ExtResource("13_ukyrk")
