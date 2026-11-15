@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://c08rxafe7shfh"]
 
 [ext_resource type="Script" uid="uid://d4ayvgmyguaqs" path="res://Scripts/Levels/level_1.gd" id="1_cyadu"]
-[ext_resource type="Texture2D" uid="uid://di2p8v3h0uxi7" path="res://Assets/tileset.png" id="1_tlcug"]
+[ext_resource type="Texture2D" uid="uid://brxsgntsoe8m2" path="res://Assets/tileset.png" id="1_tlcug"]
 [ext_resource type="PackedScene" uid="uid://cbci8hx40y08l" path="res://Scenes/player.tscn" id="2_3mqfk"]
 [ext_resource type="Texture2D" uid="uid://chvd3c7pj6ayx" path="res://fons.png" id="2_rb0md"]
 [ext_resource type="PackedScene" uid="uid://btrbb6lehnqyt" path="res://Scenes/duck.tscn" id="3_iixi8"]
@@ -13,9 +13,6 @@
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dpyx"]
 texture = ExtResource("1_tlcug")
-2:0/size_in_atlas = Vector2i(2, 2)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.0791531, -1.0791512, 15.827568, -15.46785, 15.827568, 16.367144, -15.827568, 16.00743)
 4:0/size_in_atlas = Vector2i(2, 2)
 4:0/0 = 0
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.827568, -15.827568, 15.827568, -15.46785, 15.827568, 16.367144, -15.827568, 16.00743)
@@ -28,6 +25,9 @@ texture = ExtResource("1_tlcug")
 12:0/size_in_atlas = Vector2i(2, 2)
 12:0/0 = 0
 12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.63726044, -16.250168, 15.612907, -16.250168, 15.827568, 16.367144, -15.827568, 16.00743)
+2:0/size_in_atlas = Vector2i(2, 2)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.0791531, -1.0791512, 15.827568, -15.46785, 15.827568, 16.367144, -15.827568, 16.00743)
 
 [sub_resource type="TileSet" id="TileSet_3mqfk"]
 physics_layer_0/collision_layer = 1
