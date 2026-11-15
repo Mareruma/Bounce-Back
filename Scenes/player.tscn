@@ -39,7 +39,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_pu2lt")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Run",
 "speed": 5.0
 }]
@@ -59,7 +59,7 @@ script = ExtResource("1_cvnsp")
 position = Vector2(-2, -3)
 scale = Vector2(0.26367188, 0.26220703)
 sprite_frames = SubResource("SpriteFrames_wp5od")
-animation = &"Kick"
+animation = &"Run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2124131111]
 position = Vector2(-2, -3)
@@ -68,6 +68,21 @@ shape = SubResource("CapsuleShape2D_3smsa")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1259623436]
 offset = Vector2(0, -50)
 zoom = Vector2(3, 3)
+
+[node name="Control" type="Control" parent="Camera2D" unique_id=18372136]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Camera2D/Control" unique_id=1244332427]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(100, -100)
+text = "score::"
 
 [node name="KickArea" type="Area2D" parent="." unique_id=421994624]
 
